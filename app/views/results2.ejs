@@ -1,0 +1,29 @@
+<!-- views/search.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Search Results</title>
+</head>
+<body>
+  <h1>Asset Tracker Results</h1>
+
+  <% if (users.length === 0) { %>
+    <p>No users found matching your search query.</p>
+  <% } else { %>
+    <ul>
+      <% users.forEach((empasset) => { %>
+        <li>Employee ID: <%= empasset.eid %></li>
+        <li>Username: <%= empasset.username %></li>
+        <li>Asset Tag: <%= empasset.assettag %></li>
+        <li>Asset Model: <%= empasset.model %></li>
+        <li>Borrow Period: <%= empasset.startdate %> - <%= empasset.enddate %>  </li>
+        <li>Status: <%= empasset.borrowstatus %></li>
+        <br>
+      <% }); %>
+    </ul>
+  <% } %>
+   
+</body>
+</html>

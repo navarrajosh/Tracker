@@ -1,0 +1,29 @@
+<!-- views/search.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Search Results</title>
+</head>
+<body>
+  <h1>User Search Results</h1>
+
+  <% if (users.length === 0) { %>
+    <p>No users found matching your search query.</p>
+  <% } else { %>
+    <ul>
+      <% users.forEach((user) => { %>
+        <li>Employee ID: <%= user.eid %></li>
+        <li>Account: <%= user.account %></li>
+        <li>Contact: <%= user.contact %></li>
+        <li>Site: <%= user.site %></li>
+        <li>Username: <%= user.username %></li>
+      <% }); %>
+    </ul>
+  <% } %>
+  
+   
+   
+</body>
+</html>

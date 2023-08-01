@@ -1,0 +1,25 @@
+<!-- views/search.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Asset Search Results</title>
+</head>
+<body>
+  <h1>User Search Results</h1>
+<% if (assets.length === 0) { %>
+    <p>No assets found matching your search query.</p>
+  <% } else { %>
+    <ul>
+      <% assets.forEach((asset) => { %>
+        <li>Asset Tag: <%= asset.assettag %></li>
+        <li>Mode: <%= asset.model %></li>
+        <li>Status: <%= asset.status %></li>
+        <li>Serial: <%= asset.serial %></li>
+      <% }); %>
+    </ul>
+  <% } %>
+    
+</body>
+</html>
